@@ -10,7 +10,7 @@
     <style>
         .wrapper {
             position: relative;
-            padding: var(--space-lg);
+            padding: var(--space-md);
         }
         /* Site Container - Full viewport grid layout */
         .site-grid {
@@ -28,7 +28,7 @@
         }
 
         .site-cell {
-            grid-template-columns: repeat(12,minmax(0,1fr));
+            grid-template-columns: repeat(4,minmax(0,1fr));
         }
 
         /* Prevent body scroll when using site-container */
@@ -54,8 +54,8 @@
         .site-msg, .logo {
             /* Content container - automatically centered by parent grid */
             max-width: 100%;
-            grid-column: 4 / span 6;
-            padding: var(--space-lg);
+            grid-column: span 4;
+            padding: var(--space-md);
             text-align: center;
         }
 
@@ -66,6 +66,26 @@
 
         .lead {
             font-weight: 600;
+        }
+        @media (min-width: 800px) {
+            .site-cell {
+                grid-template-columns: repeat(8,minmax(0,1fr));
+            }
+            .site-msg, .logo {
+                grid-column: span 8;
+            }
+        }
+        @media (min-width: 1240px) {
+            .wrapper {
+                padding: var(--space-lg);
+            }
+            .site-cell {
+                grid-template-columns: repeat(12,minmax(0,1fr));
+            }
+            .site-msg, .logo {
+                grid-column: 4 / span 6;
+                padding: var(--space-lg);
+            }
         }
     </style>
 
